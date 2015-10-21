@@ -2,44 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\State;
-use Illuminate\Http\Request;
-use Laravel\Lumen\Routing\Controller as BaseController;
+use Illuminate\Foundation\Bus\DispatchesJobs;
+use Illuminate\Routing\Controller as BaseController;
+use Illuminate\Foundation\Validation\ValidatesRequests;
+use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 
-class Controller extends BaseController
+abstract class Controller extends BaseController
 {
-    function process(Request $request) {
-
-
-        $processName = $request->get('process');
-        $controlName = $request->get('controlName');
-        $state = $request->get('value');
-
-        $processFilename = $processName . '.bat';
-
-
-        exec('C:\xampp\htdocs\smart\process\\'.$processFilename);
-
-
-
-        if($controlName){
-
-            $control = State::where([
-                'process'=>$controlName,
-            ])->first();
-
-            if($control) {
-                $control->value = $state;
-                $control->save();
-            }
-            else {
-                State::create([
-                    'process' =>$controlName,
-                    'value' => $state
-                ]);
-            }
-        }
-
-        return 'OK';
-    }
+    use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 }

@@ -1,23 +1,6 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Smart Home</title>
+@extends('layout.master')
 
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="assets/bower_components/bootstrap/dist/css/bootstrap.min.css">
-
-    <!-- Optional theme -->
-    <link rel="stylesheet" href="assets/bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
-
-    <!-- Bootstrap switch -->
-    <link href="assets/css/app.css" rel="stylesheet">
-</head>
-<body>
-
-<div class="container">
-
+@section('content')
     <h1 class="page-header">Smart Home</h1>
 
     <form action="" method="post">
@@ -31,20 +14,20 @@
                     <div class="panel-body">
                         <div class="row">
                             <div class="col-xs-4">
-                                @include('partials.switch',['onProcess'=> 'Room1LedSmartOn', 'offProcess' => 'Room1LedSmartOff', 'label'=> 'LED', 'name' =>'Room1LedSmart'])
+                                @include('partials.switch',['label'=> 'LED', 'control' => $controls['Room1LedSmart']])
                             </div>
                             <div class="col-xs-8">
-                                @include('partials.led',['onProcess'=> 'Room1LedOn', 'offProcess' => 'Room1LedOff', 'activeOn'=>'Room1LedSmartOn' ,'label' => 'LED 1', 'name' => 'Room1Led'])
+                                @include('partials.led',['activeOn'=>'Room1LedSmartOn' ,'label' => 'LED 1', 'control' => $controls['Room1Led']])
                             </div>
                         </div>
                         <br/>
 
                         <div class="row">
                             <div class="col-xs-4">
-                                @include('partials.switch',['onProcess'=> 'Room1ShutterSmartOn', 'offProcess' => 'Room1ShutterSmartOff', 'label'=> 'Shutter', 'name' =>'Room1ShutterSmart'])
+                                @include('partials.switch',['label'=> 'Shutter', 'control' => $controls['Room1ShutterSmart']])
                             </div>
                             <div class="col-xs-8">
-                                @include('partials.shutter',['upProcess'=> 'Room1ShutterUP', 'downProcess' => 'Room1ShutterDown', 'stopProcess'=> 'Room1ShutterStop', 'activeOn'=>'Room1ShutterSmartOn'])
+                                @include('partials.shutter',['control' => $controls['Room1Shutter'], 'activeOn'=>'Room1ShutterSmartOn'])
                             </div>
                         </div>
                     </div>
@@ -57,20 +40,20 @@
                     <div class="panel-body">
                         <div class="row">
                             <div class="col-xs-4">
-                                @include('partials.switch',['onProcess'=> 'Room2LedSmartOn', 'offProcess' => 'Room2LedSmartOff', 'label'=> 'LED', 'name' =>'Room2LedSmart'])
+                                @include('partials.switch',['label'=> 'LED', 'control' => $controls['Room2LedSmart']])
                             </div>
                             <div class="col-xs-8">
-                                @include('partials.led',['onProcess'=> 'Room2LedOn', 'offProcess' => 'Room2LedOff' ,'label' => 'LED 1', 'activeOn'=>'Room2LedSmartOn', 'name' =>'Room2Led'])
+                                @include('partials.led',['label' => 'LED 1', 'activeOn'=>'Room2LedSmartOn', 'control' => $controls['Room2Led']])
                             </div>
                         </div>
                         <br/>
 
                         <div class="row">
                             <div class="col-xs-4">
-                                @include('partials.switch',['onProcess'=> 'Room2ShutterSmartOn', 'offProcess' => 'Room2ShutterSmartOff', 'label'=> 'Shutter', 'name' =>'Room2ShutterSmart'])
+                                @include('partials.switch',['label'=> 'Shutter', 'control' => $controls['Room2ShutterSmart']])
                             </div>
                             <div class="col-xs-8">
-                                @include('partials.shutter',['upProcess'=> 'Room2ShutterUP', 'downProcess' => 'Room2ShutterDown', 'stopProcess'=> 'Room2ShutterStop', 'activeOn'=>'Room2ShutterSmartOn'])
+                                @include('partials.shutter',['control' => $controls['Room2Shutter'], 'activeOn'=>'Room2ShutterSmartOn'])
                             </div>
                         </div>
                     </div>
@@ -83,49 +66,49 @@
                     <div class="panel-body">
                         <div class="row">
                             <div class="col-xs-4">
-                                @include('partials.switch',['onProcess'=> 'Room3Led1SmartOn', 'offProcess' => 'Room3Led1SmartOff', 'label'=> 'LED 1 Smart', 'name' =>'Room3Led1Smart'])
+                                @include('partials.switch',['label'=> 'LED 1 Smart', 'control' => $controls['Room3Led1Smart']])
                             </div>
                             <div class="col-xs-8">
-                                @include('partials.led',['onProcess'=> 'Room3Led1On', 'offProcess' => 'Room3Led1Off' ,'label' => 'LED 1', 'activeOn'=>'Room3Led1SmartOn', 'name' =>'Room3Led1'])
+                                @include('partials.led',['label' => 'LED 1', 'activeOn'=>'Room3Led1SmartOn', 'control' => $controls['Room3Led1']])
                             </div>
                         </div>
                         <br/>
 
                         <div class="row">
                             <div class="col-xs-4">
-                                @include('partials.switch',['onProcess'=> 'Room3Led2SmartOn', 'offProcess' => 'Room3Led2SmartOff', 'label'=> 'LED 2 Smart', 'name' =>'Room3Led2Smart'])
+                                @include('partials.switch',['label'=> 'LED 2 Smart', 'control' => $controls['Room3Led2Smart']])
                             </div>
                             <div class="col-xs-8">
-                                @include('partials.led',['onProcess'=> 'Room3Led2On', 'offProcess' => 'Room3Led2Off' ,'label' => 'LED 2', 'activeOn'=>'Room3Led2SmartOn', 'name' =>'Room3Led2'])
+                                @include('partials.led',['label' => 'LED 2', 'activeOn'=>'Room3Led2SmartOn', 'control' => $controls['Room3Led2']])
                             </div>
                         </div>
                         <br/>
 
                         <div class="row">
                             <div class="col-xs-4">
-                                @include('partials.switch',['onProcess'=> 'Room3Led3SmartOn', 'offProcess' => 'Room3Led3SmartOff', 'label'=> 'LED 3 Smart', 'name' =>'Room3Led3Smart'])
+                                @include('partials.switch',['label'=> 'LED 3 Smart', 'control' => $controls['Room3Led3Smart']])
                             </div>
                             <div class="col-xs-8">
-                                @include('partials.led',['onProcess'=> 'Room3Led3On', 'offProcess' => 'Room3Led3Off' ,'label' => 'LED 3', 'activeOn'=>'Room3Led3SmartOn', 'name' =>'Room3Led3'])
+                                @include('partials.led',['label' => 'LED 3', 'activeOn'=>'Room3Led3SmartOn', 'control' => $controls['Room3Led3']])
                             </div>
                         </div>
                         <br/>
 
                         <div class="row">
                             <div class="col-xs-4">
-                                @include('partials.switch',['onProcess'=> 'Room3Shutter1SmartOn', 'offProcess' => 'Room3Shutter1SmartOff', 'label'=> 'Shutter 1', 'name' =>'Room3Shutter1Smart'])
+                                @include('partials.switch',['label'=> 'Shutter 1', 'control' => $controls['Room3Shutter1Smart']])
                             </div>
                             <div class="col-xs-8">
-                                @include('partials.shutter',['upProcess'=> 'Room3Shutter1UP', 'downProcess' => 'Room3Shutter1Down', 'stopProcess'=> 'Room3Shutter1Stop', 'activeOn'=>'Room3Shutter1SmartOn'])
+                                @include('partials.shutter',['control' => $controls['Room3Shutter1'], 'activeOn'=>'Room3Shutter1SmartOn'])
                             </div>
                         </div>
 
                         <div class="row">
                             <div class="col-xs-4">
-                                @include('partials.switch',['onProcess'=> 'Room3Shutter2SmartOn', 'offProcess' => 'Room3Shutter2SmartOff', 'label'=> 'Shutter 2', 'name' =>'Room3Shutter2Smart'])
+                                @include('partials.switch',['label'=> 'Shutter 2', 'control' => $controls['Room3Shutter2Smart']])
                             </div>
                             <div class="col-xs-8">
-                                @include('partials.shutter',['upProcess'=> 'Room3Shutter2UP', 'downProcess' => 'Room3Shutter2Down', 'stopProcess'=> 'Room3Shutter2Stop', 'activeOn'=>'Room3Shutter2SmartOn'])
+                                @include('partials.shutter',['control' => $controls['Room3Shutter2'], 'activeOn'=>'Room3Shutter2SmartOn'])
                             </div>
                         </div>
                     </div>
@@ -139,40 +122,40 @@
                     <div class="panel-body">
                         <div class="row">
                             <div class="col-xs-4">
-                                @include('partials.switch',['onProcess'=> 'KitchenLed1SmartOn', 'offProcess' => 'KitchenLed1SmartOff', 'label'=> 'LED 1 Smart', 'name' =>'KitchenLed1Smart'])
+                                @include('partials.switch',['label'=> 'LED 1 Smart', 'control' => $controls['KitchenLed1Smart']])
                             </div>
                             <div class="col-xs-8">
-                                @include('partials.led',['onProcess'=> 'KitchenLed1On', 'offProcess' => 'KitchenLed1Off' ,'label' => 'LED 1', 'activeOn'=>'KitchenLed1SmartOn', 'name' =>'KitchenLed1'])
+                                @include('partials.led',['label' => 'LED 1', 'activeOn'=>'KitchenLed1SmartOn', 'control' => $controls['KitchenLed1']])
                             </div>
                         </div>
                         <br/>
 
                         <div class="row">
                             <div class="col-xs-4">
-                                @include('partials.switch',['onProcess'=> 'KitchenLed2SmartOn', 'offProcess' => 'KitchenLed2SmartOff', 'label'=> 'LED 2 Smart', 'name' =>'KitchenLed2Smart'])
+                                @include('partials.switch',['label'=> 'LED 2 Smart', 'control' => $controls['KitchenLed2Smart']])
                             </div>
                             <div class="col-xs-8">
-                                @include('partials.led',['onProcess'=> 'KitchenLed2On', 'offProcess' => 'KitchenLed2Off' ,'label' => 'LED 2', 'activeOn'=>'KitchenLed2SmartOn', 'name' =>'KitchenLed2'])
+                                @include('partials.led',['label' => 'LED 2', 'activeOn'=>'KitchenLed2SmartOn', 'control' => $controls['KitchenLed2']])
                             </div>
                         </div>
                         <br/>
 
                         <div class="row">
                             <div class="col-xs-4">
-                                @include('partials.switch',['onProcess'=> 'KitchenLed3SmartOn', 'offProcess' => 'KitchenLed3SmartOff', 'label'=> 'LED 3 Smart', 'name' =>'KitchenLed3Smart'])
+                                @include('partials.switch',['label'=> 'LED 3 Smart', 'control' => $controls['KitchenLed3Smart']])
                             </div>
                             <div class="col-xs-8">
-                                @include('partials.led',['onProcess'=> 'KitchenLed3On', 'offProcess' => 'KitchenLed3Off' ,'label' => 'LED 3', 'activeOn'=>'KitchenLed3SmartOn', 'name' =>'KitchenLed3'])
+                                @include('partials.led',['label' => 'LED 3', 'activeOn'=>'KitchenLed3SmartOn', 'control' => $controls['KitchenLed3']])
                             </div>
                         </div>
                         <br/>
 
                         <div class="row">
                             <div class="col-xs-4">
-                                @include('partials.switch',['onProcess'=> 'KitchenLed4SmartOn', 'offProcess' => 'KitchenLed4SmartOff', 'label'=> 'LED 4 Smart', 'name' =>'KitchenLed4Smart'])
+                                @include('partials.switch',['label'=> 'LED 4 Smart', 'control' => $controls['KitchenLed4Smart']])
                             </div>
                             <div class="col-xs-8">
-                                @include('partials.led',['onProcess'=> 'KitchenLed4On', 'offProcess' => 'KitchenLed4Off' ,'label' => 'LED 4', 'activeOn'=>'KitchenLed4SmartOn', 'name' =>'KitchenLed4'])
+                                @include('partials.led',['label' => 'LED 4', 'activeOn'=>'KitchenLed4SmartOn', 'control' => $controls['KitchenLed4']])
                             </div>
                         </div>
                         <br/>
@@ -188,60 +171,60 @@
                     <div class="panel-body">
                         <div class="row">
                             <div class="col-xs-4">
-                                @include('partials.switch',['onProcess'=> 'SittingLed1SmartOn', 'offProcess' => 'SittingLed1SmartOff', 'label'=> 'LED 1 Smart', 'name' =>'SittingLed1Smart'])
+                                @include('partials.switch',['label'=> 'LED 1 Smart', 'control' => $controls['SittingLed1Smart']])
                             </div>
                             <div class="col-xs-8">
-                                @include('partials.led',['onProcess'=> 'SittingLed1On', 'offProcess' => 'SittingLed1Off' ,'label' => 'LED 1', 'activeOn'=>'SittingLed1SmartOn', 'name' =>'SittingLed1'])
+                                @include('partials.led',['label' => 'LED 1', 'activeOn'=>'SittingLed1SmartOn', 'control' => $controls['SittingLed1']])
                             </div>
                         </div>
                         <br/>
 
                         <div class="row">
                             <div class="col-xs-4">
-                                @include('partials.switch',['onProcess'=> 'SittingLed2SmartOn', 'offProcess' => 'SittingLed2SmartOff', 'label'=> 'LED 2 Smart', 'name' =>'SittingLed2Smart'])
+                                @include('partials.switch',['label'=> 'LED 2 Smart', 'control' => $controls['SittingLed2Smart']])
                             </div>
                             <div class="col-xs-8">
-                                @include('partials.led',['onProcess'=> 'SittingLed2On', 'offProcess' => 'SittingLed2Off' ,'label' => 'LED 2', 'activeOn'=>'SittingLed2SmartOn', 'name' =>'SittingLed2'])
+                                @include('partials.led',['label' => 'LED 2', 'activeOn'=>'SittingLed2SmartOn', 'control' => $controls['SittingLed2']])
                             </div>
                         </div>
                         <br/>
 
                         <div class="row">
                             <div class="col-xs-4">
-                                @include('partials.switch',['onProcess'=> 'SittingLed3SmartOn', 'offProcess' => 'SittingLed3SmartOff', 'label'=> 'LED 3 Smart', 'name' =>'SittingLed3Smart'])
+                                @include('partials.switch',['label'=> 'LED 3 Smart', 'control' => $controls['SittingLed3Smart']])
                             </div>
                             <div class="col-xs-8">
-                                @include('partials.led',['onProcess'=> 'SittingLed3On', 'offProcess' => 'SittingLed3Off' ,'label' => 'LED 3', 'activeOn'=>'SittingLed3SmartOn', 'name' =>'SittingLed3'])
+                                @include('partials.led',['label' => 'LED 3', 'activeOn'=>'SittingLed3SmartOn', 'control' => $controls['SittingLed3']])
                             </div>
                         </div>
                         <br/>
 
                         <div class="row">
                             <div class="col-xs-4">
-                                @include('partials.switch',['onProcess'=> 'SittingLed4SmartOn', 'offProcess' => 'SittingLed4SmartOff', 'label'=> 'LED 4 Smart', 'name' =>'SittingLed4Smart'])
+                                @include('partials.switch',['label'=> 'LED 4 Smart', 'control' => $controls['SittingLed4Smart']])
                             </div>
                             <div class="col-xs-8">
-                                @include('partials.led',['onProcess'=> 'SittingLed4On', 'offProcess' => 'SittingLed4Off' ,'label' => 'LED 4', 'activeOn'=>'SittingLed4SmartOn', 'name' =>'SittingLed4'])
+                                @include('partials.led',['label' => 'LED 4', 'activeOn'=>'SittingLed4SmartOn', 'control' => $controls['SittingLed4']])
                             </div>
                         </div>
                         <br/>
 
                         <div class="row">
                             <div class="col-xs-4">
-                                @include('partials.switch',['onProcess'=> 'SittingLed5SmartOn', 'offProcess' => 'SittingLed5SmartOff', 'label'=> 'LED 5 Smart', 'name' =>'SittingLed5Smart'])
+                                @include('partials.switch',['label'=> 'LED 5 Smart', 'control' => $controls['SittingLed5Smart']])
                             </div>
                             <div class="col-xs-8">
-                                @include('partials.led',['onProcess'=> 'SittingLed5On', 'offProcess' => 'SittingLed5Off' ,'label' => 'LED 5', 'activeOn'=>'SittingLed5SmartOn', 'name' =>'SittingLed5'])
+                                @include('partials.led',['label' => 'LED 5', 'activeOn'=>'SittingLed5SmartOn', 'control' => $controls['SittingLed5']])
                             </div>
                         </div>
                         <br/>
 
                         <div class="row">
                             <div class="col-xs-4">
-                                @include('partials.switch',['onProcess'=> 'SittingLed6SmartOn', 'offProcess' => 'SittingLed6SmartOff', 'label'=> 'LED 6 Smart', 'name' =>'SittingLed6Smart'])
+                                @include('partials.switch',['label'=> 'LED 6 Smart', 'control' => $controls['SittingLed6Smart']])
                             </div>
                             <div class="col-xs-8">
-                                @include('partials.led',['onProcess'=> 'SittingLed6On', 'offProcess' => 'SittingLed6Off' ,'label' => 'LED 6', 'activeOn'=>'SittingLed6SmartOn', 'name' =>'SittingLed6'])
+                                @include('partials.led',['label' => 'LED 6', 'activeOn'=>'SittingLed6SmartOn', 'control' => $controls['SittingLed6']])
                             </div>
                         </div>
                         <br/>
@@ -256,73 +239,8 @@
     </form>
 
 
-</div>
+@endsection
 
-
-<!-- Latest compiled and minified JavaScript -->
-<script src="assets/bower_components/jquery/dist/jquery.min.js"></script>
-<script src="assets/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-
-<script>
-
-    function triggerProcess(processName, controlName, value)
-    {
-        $.post('/process',{
-            process: processName,
-            controlName: controlName,
-            value: value
-        });
-    }
-
-    (function () {
-
-        $('.onoffswitch-label').click(function () {
-            var checkbox = $(this).siblings('input');
-            checkbox.prop('checked', !checkbox.prop('checked')).change();
-        });
-
-        $('.led-box').click(function () {
-            var checkbox = $(this).find('input');
-            if(checkbox.is(':enabled')) {
-                checkbox.prop('checked', !checkbox.prop('checked')).change();
-            }
-        });
-
-        $('.onoffswitch-checkbox').change(function (e, value) {
-            var $checkbox = $(this),
-                    onProcessName;
-            onProcessName = $(this).attr('data-process-on-name');
-            if ($checkbox.is(':checked')) {
-                $("[data-active-on='" + onProcessName +"']").removeAttr("disabled");
-            }
-            else {
-                $("[data-active-on='" + onProcessName +"']").attr("disabled", true);
-            }
-        });
-
-        // handle button click
-        $('button[data-process-name]').click(function(e){
-            e.preventDefault();
-
-            var process = $(this).attr('data-process-name');
-            triggerProcess(process);
-        });
-
-        // handle checkbox click
-        $('input[type="checkbox"][data-process-on-name]').change(function(e){
-            var $checkbox = $(this);
-            if ($checkbox.is(':checked')) {
-                triggerProcess($checkbox.data('process-on-name'), $checkbox.data('name'),'on');
-            }
-            else {
-                triggerProcess($checkbox.data('process-off-name'), $checkbox.data('name'),'off');
-            }
-        });
-
-    })();
-
-
-</script>
-
-</body>
-</html>
+@section('scripts')
+    <script src="/assets/js/home.js"></script>
+@endsection
