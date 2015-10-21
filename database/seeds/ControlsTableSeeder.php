@@ -240,25 +240,25 @@ class ControlsTableSeeder extends Seeder
                 'name' => 'Room1Shutter',
                 'type' => 'shutter',
                 'lastValue' => null,
-                'dependsOn' => null
+                'dependsOn' => 'Room1ShutterSmart'
             ],
             [
                 'name' => 'Room2Shutter',
                 'type' => 'shutter',
                 'lastValue' => null,
-                'dependsOn' => null
+                'dependsOn' => 'Room2ShutterSmart'
             ],
             [
                 'name' => 'Room3Shutter1',
                 'type' => 'shutter',
                 'lastValue' => null,
-                'dependsOn' => null
+                'dependsOn' => 'Room3Shutter1Smart'
             ],
             [
                 'name' => 'Room3Shutter2',
                 'type' => 'shutter',
                 'lastValue' => null,
-                'dependsOn' => null
+                'dependsOn' => 'Room3Shutter2Smart'
             ]
         ];
 
