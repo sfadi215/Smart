@@ -1,0 +1,1 @@
+ECHO b > COM5;
