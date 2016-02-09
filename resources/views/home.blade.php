@@ -40,10 +40,17 @@
                     <div class="panel-body">
                         <div class="row">
                             <div class="col-xs-4">
-                                @include('partials.switch',['label'=> 'Boiler', 'control' => $controls['Room2LedSmart']])
+
+                                @include('partials.switch',['label'=> 'LED', 'control' => $controls['Room2LedSmart']])
                             </div>
                             <div class="col-xs-8">
-                                @include('partials.led',['label' => 'Boiler1', 'activeOn'=>'Room2LedSmartOn', 'control' => $controls['Room2Led']])
+                                @include('partials.led',['label' => 'LED1', 'activeOn'=>'Room2LedSmartOn', 'control' => $controls['Room2Led']])
+=======
+                                @include('partials.switch',['label'=> 'LED', 'control' => $controls['Room2LedSmart']])
+                            </div>
+                            <div class="col-xs-8">
+                                @include('partials.led',['label' => 'LED 1', 'activeOn'=>'Room2LedSmartOn', 'control' => $controls['Room2Led']])
+
                             </div>
                         </div>
                         <br/>
