@@ -43,7 +43,7 @@
                                 @include('partials.switch',['label'=> 'Boiler', 'control' => $controls['Room2LedSmart']])
                             </div>
                             <div class="col-xs-8">
-                                @include('partials.led',['label' => 'Boiler 1', 'activeOn'=>'Room2LedSmartOn', 'control' => $controls['Room2Led']])
+                                @include('partials.led',['label' => 'Boiler1', 'activeOn'=>'Room2LedSmartOn', 'control' => $controls['Room2Led']])
                             </div>
                         </div>
                         <br/>
