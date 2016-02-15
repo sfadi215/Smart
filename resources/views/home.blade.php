@@ -9,7 +9,10 @@
             <div class="col-md-offset-2 col-md-8 col-xs-12">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h4>Room 1</h4>
+                        <h4>Room 1
+                            @include('partials.temperature',['temp' => $temps['28 f2 68 97 06 00 00 9b']->value])
+                        </h4>
+
                     </div>
                     <div class="panel-body">
                         <div class="row">
@@ -30,6 +33,7 @@
                                 @include('partials.shutter',['control' => $controls['Room1Shutter'], 'activeOn'=>'Room1ShutterSmartOn'])
                             </div>
                         </div>
+
                     </div>
                 </div>
 

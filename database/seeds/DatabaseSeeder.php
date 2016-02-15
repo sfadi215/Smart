@@ -15,6 +15,7 @@ class DatabaseSeeder extends Seeder
     {
         DB::raw('SET foreign_key_checks = 0');
 
+        // first i clear the tables here
         DB::table('users')->truncate();
         DB::table('controls')->truncate();
 
@@ -22,6 +23,7 @@ class DatabaseSeeder extends Seeder
 
         Model::unguard();
 
+        // then i call the seeders to seed the data
         $this->call(UserTableSeeder::class);
         $this->call(ControlsTableSeeder::class);
 

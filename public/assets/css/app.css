@@ -81,3 +81,11 @@
     margin-top: 25px;
     text-align:center;
 }
+
+
+/* Temprature style */
+.temp {
+    float:right;
+    font-weight:bold;
+    color:red;
+}

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Control;
 use App\State;
+use App\Temperature;
 use Illuminate\Http\Request;
 
 class ProcessController extends Controller
@@ -22,7 +23,10 @@ class ProcessController extends Controller
     {
         $controls = Control::all()->keyBy('name');
 
-        return view('home', compact('controls'));
+        // we will get temperatures here as well to pass them to home view
+        $temps = collect(Temperature::getLatest())->keyBy('sensor_id');
+        // pass it to the view
+        return view('home', compact('controls','temps'));
     }
 
     public function process(Request $request)

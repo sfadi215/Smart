@@ -19,3 +19,10 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
         'remember_token' => str_random(10),
     ];
 });
+
+$factory->define(App\Temperature::class, function (Faker\Generator $faker) {
+    return [
+        'sensor_id' => '28 f2 68 97 06 00 00 9b',
+        'value' => $faker->numberBetween(10,30),
+    ];
+});
