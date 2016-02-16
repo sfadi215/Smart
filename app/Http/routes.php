@@ -20,3 +20,6 @@ Route::get('auth/login', 'Auth\AuthController@getLogin');
 Route::post('auth/login', 'Auth\AuthController@postLogin');
 Route::get('auth/logout', 'Auth\AuthController@getLogout');
 
+
+// temperature data read route
+Route::get('temperature/add','TemperatureController@store');
