@@ -44,17 +44,7 @@
                     <div class="panel-body">
                         <div class="row">
                             <div class="col-xs-4">
-
                                 @include('partials.switch',['label'=> 'Boiler', 'control' => $controls['Room2LedSmart']])
-                            </div>
-                            <div class="col-xs-8">
-                                @include('partials.led',['label' => 'Boiler1', 'activeOn'=>'Room2LedSmartOn', 'control' => $controls['Room2Led']])
-
-                                @include('partials.switch',['label'=> 'LED', 'control' => $controls['Room2LedSmart']])
-                            </div>
-                            <div class="col-xs-8">
-                                @include('partials.led',['label' => 'LED 1', 'activeOn'=>'Room2LedSmartOn', 'control' => $controls['Room2Led']])
-
                             </div>
                         </div>
                         <br/>
@@ -68,11 +58,12 @@
                             </div>
                         </div>
                     </div>
-                </div>
 
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h4>Room 3</h4>
+                        <h4>Master BedRoom
+                            @include('partials.temperature',['temp' => $temps['28 f2 68 97 06 00 00 9b']->value])
+                        </h4>
                     </div>
                     <div class="panel-body">
                         <div class="row">
@@ -80,7 +71,7 @@
                                 @include('partials.switch',['label'=> 'LED 1 Smart', 'control' => $controls['Room3Led1Smart']])
                             </div>
                             <div class="col-xs-8">
-                                @include('partials.led',['label' => 'LED 1', 'activeOn'=>'Room3Led1SmartOn', 'control' => $controls['Room3Led1']])
+                                @include('partials.led',['label' => 'Main Light', 'activeOn'=>'Room3Led1SmartOn', 'control' => $controls['Room3Led1']])
                             </div>
                         </div>
                         <br/>
@@ -90,7 +81,7 @@
                                 @include('partials.switch',['label'=> 'LED 2 Smart', 'control' => $controls['Room3Led2Smart']])
                             </div>
                             <div class="col-xs-8">
-                                @include('partials.led',['label' => 'LED 2', 'activeOn'=>'Room3Led2SmartOn', 'control' => $controls['Room3Led2']])
+                                @include('partials.led',['label' => 'Room Led', 'activeOn'=>'Room3Led2SmartOn', 'control' => $controls['Room3Led2']])
                             </div>
                         </div>
                         <br/>
@@ -100,7 +91,7 @@
                                 @include('partials.switch',['label'=> 'LED 3 Smart', 'control' => $controls['Room3Led3Smart']])
                             </div>
                             <div class="col-xs-8">
-                                @include('partials.led',['label' => 'LED 3', 'activeOn'=>'Room3Led3SmartOn', 'control' => $controls['Room3Led3']])
+                                @include('partials.led',['label' => 'Spots', 'activeOn'=>'Room3Led3SmartOn', 'control' => $controls['Room3Led3']])
                             </div>
                         </div>
                         <br/>
@@ -146,7 +137,7 @@
                                 @include('partials.switch',['label'=> 'LED 2 Smart', 'control' => $controls['KitchenLed2Smart']])
                             </div>
                             <div class="col-xs-8">
-                                @include('partials.led',['label' => 'LED 2', 'activeOn'=>'KitchenLed2SmartOn', 'control' => $controls['KitchenLed2']])
+                                @include('partials.led',['label' => 'Hidden Light', 'activeOn'=>'KitchenLed2SmartOn', 'control' => $controls['KitchenLed2']])
                             </div>
                         </div>
                         <br/>
@@ -166,7 +157,7 @@
                                 @include('partials.switch',['label'=> 'LED 4 Smart', 'control' => $controls['KitchenLed4Smart']])
                             </div>
                             <div class="col-xs-8">
-                                @include('partials.led',['label' => 'LED 4', 'activeOn'=>'KitchenLed4SmartOn', 'control' => $controls['KitchenLed4']])
+                                @include('partials.led',['label' => 'Spots', 'activeOn'=>'KitchenLed4SmartOn', 'control' => $controls['KitchenLed4']])
                             </div>
                         </div>
                         <br/>
