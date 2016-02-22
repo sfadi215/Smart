@@ -39,7 +39,7 @@
 
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h4>Room 2</h4>
+                        <h4>For All Home</h4>
                     </div>
                     <div class="panel-body">
                         <div class="row">
@@ -51,7 +51,7 @@
 
                         <div class="row">
                             <div class="col-xs-4">
-                                @include('partials.switch',['label'=> 'Shutter', 'control' => $controls['Room2ShutterSmart']])
+                                @include('partials.switch',['label'=> 'All Shutters', 'control' => $controls['Room2ShutterSmart']])
                             </div>
                             <div class="col-xs-8">
                                 @include('partials.shutter',['control' => $controls['Room2Shutter'], 'activeOn'=>'Room2ShutterSmartOn'])
