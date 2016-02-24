@@ -259,6 +259,12 @@ class ControlsTableSeeder extends Seeder
                 'type' => 'shutter',
                 'lastValue' => null,
                 'dependsOn' => 'Room3Shutter2Smart'
+            ],
+            [
+                'name' => 'Away',
+                'type' => 'switch',
+                'lastValue' => null,
+                'dependsOn' => null
             ]
         ];
 

@@ -51,6 +51,13 @@
 
                         <div class="row">
                             <div class="col-xs-4">
+                                @include('partials.switch',['label'=> 'Away', 'control' => $controls['Away']])
+                            </div>
+                        </div>
+                        <br/>
+
+                        <div class="row">
+                            <div class="col-xs-4">
                                 @include('partials.switch',['label'=> 'All Shutters', 'control' => $controls['Room2ShutterSmart']])
                             </div>
                             <div class="col-xs-8">
