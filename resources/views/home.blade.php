@@ -44,7 +44,7 @@
                     <div class="panel-body">
                         <div class="row">
                             <div class="col-xs-4">
-                                @include('partials.switch',['label'=> 'Boiler', 'control' => $controls['Room2LedSmart']])
+                                @include('partials.switch',['label'=> 'Boiler', 'control' => $controls['Boiler']])
                             </div>
                         </div>
                         <br/>

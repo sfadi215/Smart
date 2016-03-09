@@ -265,7 +265,13 @@ class ControlsTableSeeder extends Seeder
                 'type' => 'switch',
                 'lastValue' => null,
                 'dependsOn' => null
-            ]
+            ],
+            [
+            'name' => 'Boiler',
+            'type' => 'switch',
+            'lastValue' => null,
+            'dependsOn' => null
+        ]
         ];
 
         Control::insert($controls);
