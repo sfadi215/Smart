@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\WaterLevel;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Log;
 
 class WaterLevelController extends Controller
 {
@@ -39,7 +41,7 @@ class WaterLevelController extends Controller
         //
         $inputs = $request->all();
 
-        waterlevel::create([
+        WaterLevel::create([
             'watervalue' => $inputs['waterlevel']
         ]);
 
