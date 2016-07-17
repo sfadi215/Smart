@@ -241,6 +241,8 @@
                     </div>
                 </div>
 
+                Water Level: @include('partials.water_level',['waterLevel' => $waterLevel])
+
             </div>
         </div>
 

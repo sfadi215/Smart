@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use App\Control;
 use App\State;
 use App\Temperature;
+use App\WaterLevel;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
 class ProcessController extends Controller
 {
@@ -25,8 +27,10 @@ class ProcessController extends Controller
 
         // we will get temperatures here as well to pass them to home view
         $temps = collect(Temperature::getLatest())->keyBy('sensor_id');
+        // get water level value(s) and pass to view
+        $waterLevel = WaterLevel::getLatest()->first();
         // pass it to the view
-        return view('home', compact('controls','temps'));
+        return view('home', compact('controls','temps','waterLevel'));
     }
 
     public function process(Request $request)
