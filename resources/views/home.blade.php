@@ -242,7 +242,9 @@
                 </div>
 
                 Water Level: @include('partials.water_level',['waterLevel' => $waterLevel])
-
+                <div>
+                    Raining: @include('partials.rain',['rainSensor' => $rainSensor])
+                </div>
             </div>
         </div>
 

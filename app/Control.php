@@ -34,6 +34,7 @@ class Control extends Model
 
     private function runProcess($processName)
     {
+        // use this code to run a bat file
         $processFilename = $processName . '.bat';
         exec('C:\xampp\htdocs\smart\process\\' . $processFilename);
 

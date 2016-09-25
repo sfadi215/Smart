@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Control;
+use App\RainSensor;
 use App\State;
 use App\Temperature;
 use App\WaterLevel;
@@ -29,8 +30,10 @@ class ProcessController extends Controller
         $temps = collect(Temperature::getLatest())->keyBy('sensor_id');
         // get water level value(s) and pass to view
         $waterLevel = WaterLevel::getLatest()->first();
+
+        $rainSensor = RainSensor::getLatest()->first();
         // pass it to the view
-        return view('home', compact('controls','temps','waterLevel'));
+        return view('home', compact('controls','temps','waterLevel','rainSensor'));
     }
 
     public function process(Request $request)

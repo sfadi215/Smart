@@ -18,6 +18,8 @@ class DatabaseSeeder extends Seeder
         // first i clear the tables here
         DB::table('users')->truncate();
         DB::table('controls')->truncate();
+        DB::table('temperatures')->truncate();
+        DB::table('rain_sensors')->truncate();
 
         DB::raw('SET foreign_key_checks = 1');
 
@@ -26,6 +28,8 @@ class DatabaseSeeder extends Seeder
         // then i call the seeders to seed the data
         $this->call(UserTableSeeder::class);
         $this->call(ControlsTableSeeder::class);
+        $this->call(TempTableSeeder::class);
+        $this->call(RainSensorsTableSeeder::class);
 
         Model::reguard();
     }
