@@ -24,4 +24,4 @@ Route::get('auth/logout', 'Auth\AuthController@getLogout');
 // temperature data read route
 Route::get('temperature/add','TemperatureController@store');
 Route::get('waterlevel/add','WaterLevelController@store');
-Route::get('rainSensor/add','RainController@store');
+Route::get('rainSensor/add','RainSensorController@store');
