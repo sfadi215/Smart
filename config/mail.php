@@ -15,8 +15,8 @@ return [
     |
     */
 
-    'driver' => env('MAIL_DRIVER', 'smtp'),
-
+    //'driver' => env('MAIL_DRIVER', 'smtp'),
+    'driver' => 'smtp',
     /*
     |--------------------------------------------------------------------------
     | SMTP Host Address
@@ -28,8 +28,8 @@ return [
     |
     */
 
-    'host' => env('MAIL_HOST', 'smtp.mailgun.org'),
-
+    //'host' => env('MAIL_HOST', 'smtp.gmail.com'),
+    'host' => 'smtp.gmail.com',
     /*
     |--------------------------------------------------------------------------
     | SMTP Host Port
@@ -41,8 +41,8 @@ return [
     |
     */
 
-    'port' => env('MAIL_PORT', 587),
-
+    //'port' => env('MAIL_PORT', 587),
+    'port' => 587,
     /*
     |--------------------------------------------------------------------------
     | Global "From" Address
@@ -54,7 +54,10 @@ return [
     |
     */
 
-    'from' => ['address' => null, 'name' => null],
+    //'from' => ['address' => null, 'name' => null],
+   // 'from' => ['address' => env('MAIL_FROM'), 'name' => env('MAIL_NAME')],
+    'from' => ['address' => 'fadismarthome@gmail.com', 'name' => 'Smart Home'],
+
 
     /*
     |--------------------------------------------------------------------------
@@ -67,8 +70,8 @@ return [
     |
     */
 
-    'encryption' => env('MAIL_ENCRYPTION', 'tls'),
-
+    //'encryption' => env('MAIL_ENCRYPTION', 'tls'),
+    'encryption' => 'tls',
     /*
     |--------------------------------------------------------------------------
     | SMTP Server Username
@@ -80,8 +83,8 @@ return [
     |
     */
 
-    'username' => env('MAIL_USERNAME'),
-
+  //  'username' => env('MAIL_USERNAME'),
+    'username' => 'fadismarthome@gmail.com',
     /*
     |--------------------------------------------------------------------------
     | SMTP Server Password
@@ -93,7 +96,8 @@ return [
     |
     */
 
-    'password' => env('MAIL_PASSWORD'),
+ //   'password' => env('MAIL_PASSWORD'),
+    'password' => 'ieqobuaakadyvutb',
 
     /*
     |--------------------------------------------------------------------------

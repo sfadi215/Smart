@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Mail;
 
 class WaterLevelController extends Controller
 {
@@ -40,6 +41,9 @@ class WaterLevelController extends Controller
     {
         //
         $inputs = $request->all();
+        if($inputs['waterlevel'] < 10){
+            Mail::send('emails.wateremail',['testVar' => $inputs['waterlevel']],function($message) {$message->to('fadi.salsaa@gmail.com')->subject('Water Level');});
+        }
 
         WaterLevel::create([
             'watervalue' => $inputs['waterlevel']

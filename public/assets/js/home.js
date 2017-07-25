@@ -54,6 +54,6 @@ function triggerProcess(controlName, value) {
 
     window.setTimeout(function(){
         location.reload();
-    }, 5000);
+    }, 30000);
 
 })();
