@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Log;
+use Vinelab\Http\Client as HttpClient;
 
 class Control extends Model
 {
@@ -35,10 +36,30 @@ class Control extends Model
     private function runProcess($processName)
     {
         // use this code to run a bat file
-        $processFilename = $processName . '.bat';
-        exec('C:\xampp\htdocs\smart\process\\' . $processFilename);
+        //$processFilename = $processName . '.bat';
+        //exec('C:\xampp\htdocs\smart\process\\' . $processFilename);
 
-        Log::info('Running process: ' .$processName);
+        Log::info('Running process fadi: ' .$processName);
+
+
+        $contentLength = 0;
+
+        $client = new HttpClient;
+
+        $request = [
+
+            'url' => "http://192.168.1.6",
+            'params' => [
+
+                'key' => $processName
+
+            ],
+
+            'headers' => ['Content-Length:' . $contentLength]
+
+        ];
+        Log::info($request);
+        $response = $client->get($request);
     }
 
     public function onProcess()

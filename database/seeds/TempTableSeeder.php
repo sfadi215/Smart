@@ -20,5 +20,10 @@ class TempTableSeeder extends Seeder
             'value' => 0
         ]);
 
+        Temperature::create([
+            'sensor_id' => '28 51 2e 26 00 00 80 a8',
+            'value' => 0
+        ]);
+
     }
 }

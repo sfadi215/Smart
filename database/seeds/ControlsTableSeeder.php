@@ -145,6 +145,32 @@ class ControlsTableSeeder extends Seeder
                 'lastValue' => null,
                 'dependsOn' => null
             ],
+
+            [
+                'name' => 'SittingShutter1Smart',
+                'type' => 'switch',
+                'lastValue' => null,
+                'dependsOn' => null
+            ],
+            [
+                'name' => 'SittingShutter2Smart',
+                'type' => 'switch',
+                'lastValue' => null,
+                'dependsOn' => null
+            ],
+            [
+                'name' => 'SittingShutter3Smart',
+                'type' => 'switch',
+                'lastValue' => null,
+                'dependsOn' => null
+            ],
+            [
+                'name' => 'SittingShutter4Smart',
+                'type' => 'switch',
+                'lastValue' => null,
+                'dependsOn' => null
+            ],
+
             [
                 'name' => 'Room1Led',
                 'type' => 'led',
@@ -260,6 +286,32 @@ class ControlsTableSeeder extends Seeder
                 'lastValue' => null,
                 'dependsOn' => 'Room3Shutter2Smart'
             ],
+
+            [
+                'name' => 'SittingShutter1',
+                'type' => 'shutter',
+                'lastValue' => null,
+                'dependsOn' => 'SittingShutter1Smart'
+            ],
+            [
+                'name' => 'SittingShutter2',
+                'type' => 'shutter',
+                'lastValue' => null,
+                'dependsOn' => 'SittingShutter2Smart'
+            ],
+            [
+                'name' => 'SittingShutter3',
+                'type' => 'shutter',
+                'lastValue' => null,
+                'dependsOn' => 'SittingShutter3Smart'
+            ],
+            [
+                'name' => 'SittingShutter4',
+                'type' => 'shutter',
+                'lastValue' => null,
+                'dependsOn' => 'SittingShutter4Smart'
+            ],
+
             [
                 'name' => 'Away',
                 'type' => 'switch',

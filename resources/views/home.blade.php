@@ -69,7 +69,7 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h4>Master BedRoom
-                            @include('partials.temperature',['temp' => $temps['28 f2 68 97 06 00 00 9b']->value])
+                            @include('partials.temperature',['temp' => $temps['28 51 2e 26 00 00 80 a8']->value])
                         </h4>
                     </div>
                     <div class="panel-body">
@@ -237,6 +237,42 @@
                             </div>
                         </div>
                         <br/>
+
+                        <div class="row">
+                            <div class="col-xs-4">
+                                @include('partials.switch',['label'=> 'Balcony Door', 'control' => $controls['SittingShutter1Smart']])
+                            </div>
+                            <div class="col-xs-8">
+                                @include('partials.shutter',['control' => $controls['SittingShutter1'], 'activeOn'=>'SittingShutter1SmartOn'])
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-xs-4">
+                                @include('partials.switch',['label'=> 'Shutter 2', 'control' => $controls['SittingShutter2Smart']])
+                            </div>
+                            <div class="col-xs-8">
+                                @include('partials.shutter',['control' => $controls['SittingShutter2'], 'activeOn'=>'SittingShutter2SmartOn'])
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-xs-4">
+                                @include('partials.switch',['label'=> 'Shutter 3', 'control' => $controls['SittingShutter3Smart']])
+                            </div>
+                            <div class="col-xs-8">
+                                @include('partials.shutter',['control' => $controls['SittingShutter3'], 'activeOn'=>'SittingShutter3SmartOn'])
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-xs-4">
+                                @include('partials.switch',['label'=> 'Shutter 4', 'control' => $controls['SittingShutter4Smart']])
+                            </div>
+                            <div class="col-xs-8">
+                                @include('partials.shutter',['control' => $controls['SittingShutter4'], 'activeOn'=>'SittingShutter4SmartOn'])
+                            </div>
+                        </div>
 
                     </div>
                 </div>
