@@ -8,7 +8,7 @@ use Vinelab\Http\Client as HttpClient;
 
 class Control extends Model
 {
-    protected $fillable = ['name','type','dependsOn','lastValue'];
+    protected $fillable = ['name','type','dependsOn','lastValue', 'controlRoute'];
 
 
     public function trigger($value)
@@ -30,11 +30,14 @@ class Control extends Model
 
     public function activateProcess()
     {
-        $this->runProcess($this->name . $this->lastValue);
+        $this->runProcess($this->name . $this->lastValue, $this->controlRoute);
     }
 
-    private function runProcess($processName)
+    private function runProcess($processName, $controlRoute = null)
     {
+        if($controlRoute == null)
+            $controlRoute = '192.168.1.6';
+
         // use this code to run a bat file
         //$processFilename = $processName . '.bat';
         //exec('C:\xampp\htdocs\smart\process\\' . $processFilename);
@@ -48,7 +51,7 @@ class Control extends Model
 
         $request = [
 
-            'url' => "http://192.168.1.6",
+            'url' => "http://" . $controlRoute,
             'params' => [
 
                 'key' => $processName
