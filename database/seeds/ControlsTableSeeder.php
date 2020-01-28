@@ -105,6 +105,12 @@ class ControlsTableSeeder extends Seeder
             ],
 
             [
+                'name' => 'KitchenShutterSmart',
+                'type' => 'switch',
+                'lastValue' => null,
+                'dependsOn' => null
+            ],
+            [
                 'name' => 'SittingLed1Smart',
                 'type' => 'switch',
                 'lastValue' => null,
@@ -170,6 +176,12 @@ class ControlsTableSeeder extends Seeder
                 'lastValue' => null,
                 'dependsOn' => null
             ],
+            [
+                'name' => 'AllShuttersSmart',
+                'type' => 'switch',
+                'lastValue' => null,
+                'dependsOn' => null
+            ],
 
             [
                 'name' => 'Room1Led',
@@ -182,6 +194,12 @@ class ControlsTableSeeder extends Seeder
                 'type' => 'led',
                 'lastValue' => null,
                 'dependsOn' => 'Room2LedSmart'
+            ],
+            [
+                'name' => 'Room2Shutter',
+                'type' => 'shutter',
+                'lastValue' => null,
+                'dependsOn' => 'Room2ShutterSmart'
             ],
             [
                 'name' => 'Room3Led1',
@@ -224,6 +242,12 @@ class ControlsTableSeeder extends Seeder
                 'type' => 'led',
                 'lastValue' => null,
                 'dependsOn' => 'KitchenLed4Smart'
+            ],
+            [
+                'name' => 'KitchenShutter',
+                'type' => 'shutter',
+                'lastValue' => null,
+                'dependsOn' => 'KitchenShutterSmart'
             ],
             [
                 'name' => 'SittingLed1',
@@ -310,6 +334,12 @@ class ControlsTableSeeder extends Seeder
                 'type' => 'shutter',
                 'lastValue' => null,
                 'dependsOn' => 'SittingShutter4Smart'
+            ],
+            [
+                'name' => 'AllShutters',
+                'type' => 'shutter',
+                'lastValue' => null,
+                'dependsOn' => 'AllShuttersSmart'
             ],
 
             [

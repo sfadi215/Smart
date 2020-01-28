@@ -39,6 +39,35 @@
 
                 <div class="panel panel-default">
                     <div class="panel-heading">
+                        <h4>Room 2
+                        </h4>
+
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-xs-4">
+                                @include('partials.switch',['label'=> 'LED', 'control' => $controls['Room2LedSmart']])
+                            </div>
+                            <div class="col-xs-8">
+                                @include('partials.led',['activeOn'=>'Room2LedSmartOn' ,'label' => 'LED 1', 'control' => $controls['Room2Led']])
+                            </div>
+                        </div>
+                        <br/>
+
+                        <div class="row">
+                            <div class="col-xs-4">
+                                @include('partials.switch',['label'=> 'Shutter', 'control' => $controls['Room2ShutterSmart']])
+                            </div>
+                            <div class="col-xs-8">
+                                @include('partials.shutter',['control' => $controls['Room2Shutter'], 'activeOn'=>'Room2ShutterSmartOn'])
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">
                         <h4>For All Home</h4>
                     </div>
                     <div class="panel-body">
@@ -58,10 +87,10 @@
 
                         <div class="row">
                             <div class="col-xs-4">
-                                @include('partials.switch',['label'=> 'All Shutters', 'control' => $controls['Room2ShutterSmart']])
+                                @include('partials.switch',['label'=> 'All Shutters', 'control' => $controls['AllShuttersSmart']])
                             </div>
                             <div class="col-xs-8">
-                                @include('partials.shutter',['control' => $controls['Room2Shutter'], 'activeOn'=>'Room2ShutterSmartOn'])
+                                @include('partials.shutter',['control' => $controls['AllShutters'], 'activeOn'=>'AllShuttersSmartOn'])
                             </div>
                         </div>
                     </div>
@@ -165,6 +194,16 @@
                             </div>
                             <div class="col-xs-8">
                                 @include('partials.led',['label' => 'Spots', 'activeOn'=>'KitchenLed4SmartOn', 'control' => $controls['KitchenLed4']])
+                            </div>
+                        </div>
+                        <br/>
+
+                        <div class="row">
+                            <div class="col-xs-4">
+                                @include('partials.switch',['label'=> 'Kitchen Shutter', 'control' => $controls['KitchenShutterSmart']])
+                            </div>
+                            <div class="col-xs-8">
+                                @include('partials.shutter',['control' => $controls['KitchenShutter'], 'activeOn'=>'KitchenShutterSmartOn'])
                             </div>
                         </div>
                         <br/>
